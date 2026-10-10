@@ -57,14 +57,32 @@
     apply();
   }
 
+  /* ---- email links: address assembled at runtime, never in the HTML ---- */
+  var AT = String.fromCharCode(64);
+  $$('a.eml[data-u][data-d]').forEach(function (a) {
+    var m = a.getAttribute('data-u') + AT + a.getAttribute('data-d');
+    var s = a.getAttribute('data-s');
+    a.href = 'mai' + 'lto:' + m + (s ? '?subject=' + encodeURIComponent(s) : '');
+    a.textContent = m;
+  });
+
   /* ---- lead form (FormSubmit AJAX) ---- */
   var form = $('#lead-form');
   if (form) {
     var ok = $('#form-ok'), err = $('#form-err'), btn = $('button[type=submit]', form);
+    var t0 = Date.now(), touched = false;
+    ['pointerdown', 'keydown', 'touchstart', 'focusin'].forEach(function (ev) {
+      form.addEventListener(ev, function () { touched = true; }, { passive: true });
+    });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       ok.hidden = true; err.hidden = true;
+      var hp = $('[name="_honey"]', form);
+      if (hp && hp.value) { form.reset(); ok.hidden = false; return; }
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!touched) return;
+      var wait = 3500 - (Date.now() - t0);
+      if (wait > 0) { btn.disabled = true; setTimeout(function () { btn.disabled = false; form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true })); }, wait); return; }
       var data = {};
       $$('input,textarea,select', form).forEach(function (el) {
         if (!el.name || el.type === 'checkbox') return;
@@ -73,13 +91,13 @@
       data.ad_platforms = $$('input[name="ad_platforms"]:checked', form).map(function (c) { return c.value; }).join(', ') || 'None selected';
       btn.disabled = true;
       var old = btn.textContent; btn.textContent = 'Sending...';
-      fetch(form.dataset.ajax, {
+      fetch('https://formsubmit.co/ajax/' + 'info' + AT + 'eyetoad' + '.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok && String(res.j.success) !== 'false') {
+          if (res.ok && String(res.j.success) === 'true') {
             ok.hidden = false; form.reset(); ok.focus();
           } else { throw new Error('rejected'); }
         })
