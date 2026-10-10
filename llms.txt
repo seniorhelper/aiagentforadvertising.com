@@ -1,0 +1,18 @@
+# AI Agent for Advertising
+
+> Custom-coded AI agents for the repetitive work of paid advertising and marketing (budget pacing alerts, search-term mining and negative keyword suggestions, ad copy drafts for approval, lead follow-up, cross-platform reporting, landing page and tracking QA, offline conversion uploads). Built by Zach Wennstedt at Eye To Ad Media, a Denver SEO and ads agency founded in 2012. Humans approve spend changes, claims and anything public. Clients own the code and prompts.
+
+Key facts:
+- The agents suggest; a person approves budget, bid and status changes and all public content.
+- No published price list. Each agent is quoted as a fixed price after a free 30-minute workflow audit.
+- The example agents on this site are blueprints, not client case studies.
+
+## Pages
+- [Home: AI agent for advertising](https://aiagentforadvertising.com/): what an advertising agent is, jobs it handles, approval rules, hours calculator, FAQ
+- [Example agents](https://aiagentforadvertising.com/examples/): 28 blueprints filterable by platform and job
+- [AI agent for Google Ads](https://aiagentforadvertising.com/google-ads-agent/): Google Ads API realities, guardrails, offline conversions
+- [AI agent for Facebook and Meta ads](https://aiagentforadvertising.com/meta-ads-agent/): fatigue, lead ads, Marketing API access, special ad categories
+- [AI ad reporting agent](https://aiagentforadvertising.com/ad-reporting-agent/): cross-platform reports with numbers computed in code
+- [How it works](https://aiagentforadvertising.com/how-it-works/): process, guardrails, kill switch, ownership, build vs running cost, what not to automate
+- [About](https://aiagentforadvertising.com/about/): Zach Wennstedt and Eye To Ad Media
+- [Contact](https://aiagentforadvertising.com/contact/): free agent idea call
