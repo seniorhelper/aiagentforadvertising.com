@@ -2,13 +2,16 @@
 
 > Custom-coded AI agents for the repetitive work of paid advertising and marketing (budget pacing alerts, search-term mining and negative keyword suggestions, ad copy drafts for approval, lead follow-up, cross-platform reporting, landing page and tracking QA, offline conversion uploads). Built by Zach Wennstedt at Eye To Ad Media, a Denver SEO and ads agency founded in 2012. Humans approve spend changes, claims and anything public. Clients own the code and prompts.
 
+What it does for an advertiser, in plain terms: an agent can flag search terms and placements that waste budget, reply to new ad leads within seconds, have the weekly report drafted before Monday starts, and line up new ad versions for approval. An "AI agent" here means a digital helper that does one repetitive ad job and asks a person before it spends money or posts anything.
+
 Key facts:
 - The agents suggest; a person approves budget, bid and status changes and all public content.
 - No published price list. Each agent is quoted as a fixed price after a free 30-minute workflow audit.
-- The example agents on this site are blueprints, not client case studies.
+- The example agents on this site are blueprints, not client case studies. The homepage before-and-after animations are illustrations, not client results.
+- Eye To Ad Media (Search Converts LLC) is BBB accredited with an A+ rating and has a 5.0 Google rating from 60 reviews. Founded in Denver in 2012.
 
 ## Pages
-- [Home: AI agent for advertising](https://aiagentforadvertising.com/): what an advertising agent is, jobs it handles, approval rules, hours calculator, FAQ
+- [Home: AI agent for advertising](https://aiagentforadvertising.com/): results-first overview, five animated before-and-after scenes (reports, lead replies, wasted spend, ad variants, file sorting), jobs it handles, approval rules, hours calculator, FAQ
 - [Example agents](https://aiagentforadvertising.com/examples/): 28 blueprints filterable by platform and job
 - [AI agent for Google Ads](https://aiagentforadvertising.com/google-ads-agent/): Google Ads API realities, guardrails, offline conversions
 - [AI agent for Facebook and Meta ads](https://aiagentforadvertising.com/meta-ads-agent/): fatigue, lead ads, Marketing API access, special ad categories
@@ -16,3 +19,7 @@ Key facts:
 - [How it works](https://aiagentforadvertising.com/how-it-works/): process, guardrails, kill switch, ownership, build vs running cost, what not to automate
 - [About](https://aiagentforadvertising.com/about/): Zach Wennstedt and Eye To Ad Media
 - [Contact](https://aiagentforadvertising.com/contact/): free agent idea call
+
+## Related
+- [AI agents for the rest of your business](https://eyetoad.com/ai-agents-for-business/): Eye To Ad Media's agents for non-advertising work
+- [SEO a la carte](https://eyetoad.com/seo-a-la-carte/): Eye To Ad Media's individual SEO services
