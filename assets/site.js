@@ -57,6 +57,35 @@
     apply();
   }
 
+  /* ---- before/after scenes: start when scrolled into view (plain scroll-position check).
+     Without JS or with reduced motion the finished frame shows, so nothing is ever blank. ---- */
+  var ba = $('.ba');
+  if (ba && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var scenes = $$('.ba-card', ba), pend = scenes.slice(), tick = 0;
+    var play = function (c) {
+      c.classList.remove('run'); c.classList.add('rs'); void c.offsetWidth;
+      c.classList.remove('rs'); c.classList.add('run');
+    };
+    var check = function () {
+      tick = 0;
+      var n = 0, vh = window.innerHeight || 800;
+      pend = pend.filter(function (c) {
+        if (c.getBoundingClientRect().top < vh * 0.8) { setTimeout(play, n++ * 450, c); return false; }
+        return true;
+      });
+      if (!pend.length) { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); }
+    };
+    var onScroll = function () { if (!tick) tick = requestAnimationFrame(check); };
+    ba.classList.add('armed');
+    scenes.forEach(function (c) {
+      var b = $('.ba-re', c);
+      if (b) b.addEventListener('click', function () { pend = pend.filter(function (x) { return x !== c; }); play(c); });
+    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    check();
+  }
+
   /* ---- email links: address assembled at runtime, never in the HTML ---- */
   var AT = String.fromCharCode(64);
   $$('a.eml[data-u][data-d]').forEach(function (a) {
